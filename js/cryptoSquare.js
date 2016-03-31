@@ -5,9 +5,10 @@ var codedMessage = function(inputString) {
   columns = Math.ceil(columns);
   var splitUncodedArray = uncodedString.split('');
   var codedArray = []
-  for (var i = 0; i <= columns; i++) {
-    for (var indy = i; indy <= splitUncodedArray.length; indy += columns - 1) {
+  for (var i = 0; i < columns - 1; i++) {
+    for (var indy = i; indy < splitUncodedArray.length; indy += columns - 1) {
       codedArray.push(splitUncodedArray[indy])
+      console.log(codedArray)
     }
   }
   for (var i = 5; i <= codedArray.length; i += 6) {

@@ -1,6 +1,5 @@
 //business logic
 
-
 var toRoman = function(inputNumber) {
 
   var numberArray = inputNumber.split('').reverse();

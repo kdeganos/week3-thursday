@@ -1,14 +1,13 @@
 //business logic
 var codedMessage = function(inputString) {
-  var uncodedString = inputString.replace(/[.,\/#!$%\^&\*;:{}=\-_'~()]/g,"").replace(/\s/g,"");
+  var uncodedString = inputString.replace(/[.,\/#!$%\^&\*;:?{}=\-_'~`()]/g,"").replace(/\s/g,"");
   var columns = Math.sqrt(uncodedString.length);
-  columns = Math.ceil(columns);
+  rows = Math.ceil(columns);
   var splitUncodedArray = uncodedString.split('');
   var codedArray = []
-  for (var i = 0; i < columns - 1; i++) {
-    for (var indy = i; indy < splitUncodedArray.length; indy += columns - 1) {
+  for (var i = 0; i < rows - 1; i++) {
+    for (var indy = i; indy < splitUncodedArray.length; indy += rows - 1) {
       codedArray.push(splitUncodedArray[indy])
-      console.log(codedArray)
     }
   }
   for (var i = 5; i <= codedArray.length; i += 6) {
